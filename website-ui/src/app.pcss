@@ -1,4 +1,28 @@
-/* Write your global styles here, in PostCSS syntax */
+:root {
+    --background-color: #131516;
+    --fore-color: rgb(200, 195, 188);
+    --font-family: "Source Sans Pro", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--fore-color);
+    font-family: var(--font-family);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Global styles */
+/* 
+:global {
+    body {
+        background-color: #131516;
+        color: rgb(200, 195, 188);
+    }
+}
+*/
+
+
