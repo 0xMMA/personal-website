@@ -16,8 +16,8 @@
 	});
 </script>
 
-<div class="lg:mt-20 space-y-20">
-	<div class="flex mx-auto justify-center items-center md:space-x-20 sm:space-x-10">
+<div class="space-y-20 lg:mt-20">
+	<div class="mx-auto flex items-center justify-center sm:space-x-10 md:space-x-20">
 		<Porttrait />
 		<Start />
 	</div>
