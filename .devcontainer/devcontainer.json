@@ -10,13 +10,17 @@
 			"extensions": [
 				"svelte.svelte-vscode",
 				"ms-azuretools.vscode-docker",
-				"ms-dotnettools.csdevkit"
+				"ms-dotnettools.csdevkit",
+				"GitHub.copilot",
+				"bradlc.vscode-tailwindcss"
 			]
 		}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	 "features": {
+		"docker-in-docker": "latest"
+	 }
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
