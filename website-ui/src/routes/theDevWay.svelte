@@ -1,5 +1,5 @@
 <script>
-    import Shard from './shard.svelte';
+    import Shard from '../lib/shard.svelte';
 </script>
 
 <div class="bg-neutral-800 p-4 rounded">
