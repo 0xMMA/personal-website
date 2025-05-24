@@ -8,6 +8,13 @@
  - deployed with docker
  - made with love
 
+## VSCode Development Setup
+1. Open project in VSCode
+2. Accept prompt to "Reopen in Container" (uses .devcontainer)
+3. Navigate to `website-ui/` folder
+4. Run `npm run dev` to start development server
+5. Website will be available at http://localhost:5173
+
 ## 'website-ui' 
 - npm run dev                                   //startet dev server
 - npm run build                                 //erstellt einen prod build
