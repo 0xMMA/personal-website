@@ -13,6 +13,31 @@
         { skill: 'Team Leadership', level: 9, color: '#28a745' }
     ];
     
+    let certifications = [
+        {
+            name: 'Professional Scrum Master I (PSM I)',
+            provider: 'Scrum.org',
+            description: 'Agile project management',
+            logo: '/badge-psm-I.svg',
+            color: 'bg-purple-600/20 text-purple-300'
+        },
+        {
+            name: 'Microsoft Certified Fundamentals',
+            provider: 'Microsoft',
+            description: 'Azure cloud platform expertise',
+            logo: '/microsoft-certified-fundamentals-badge.svg',
+            color: 'bg-blue-600/20 text-blue-300'
+        },
+        {
+            name: 'AWS Certified Cloud Practitioner',
+            provider: 'Amazon Web Services',
+            description: 'Cloud solutions architecture',
+            logo: '/aws-certified-cloud-practitioneer.png',
+            color: 'bg-orange-600/20 text-orange-300'
+        }
+        
+    ];
+
     let experience = [
         {
             title: 'Expert Consultant',
@@ -196,6 +221,33 @@
                             </svg>
                             <a href="https://www.linkedin.com/in/michael-martin-dev/" target="_blank" class="hover:text-blue-300">linkedin.com/in/michael-martin-dev</a>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications -->
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-4">Certifications</h3>
+                    <div class="space-y-4">
+                        {#each certifications as cert}
+                            <div class="flex items-center space-x-4 p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors duration-200">
+                                <!-- Certification Badge -->
+                                <div class="w-20 h-20 flex items-center justify-center flex-shrink-0">
+                                    <img 
+                                        src={cert.logo} 
+                                        alt={cert.name}
+                                        class="w-20 h-20 object-contain"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                
+                                <div class="flex-1">
+                                    <h4 class="text-white font-semibold text-sm">{cert.name}</h4>
+                                    <p class="text-gray-400 text-xs">{cert.provider}</p>
+                                    <p class="text-gray-300 text-xs mt-1">{cert.description}</p>
+                                </div>
+                                
+                            </div>
+                        {/each}
                     </div>
                 </div>
                 
