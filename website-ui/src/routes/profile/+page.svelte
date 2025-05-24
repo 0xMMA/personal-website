@@ -6,7 +6,7 @@
         { skill: 'C# .NET', level: 10, color: '#512bd4' },
         { skill: 'WinForms', level: 10, color: '#0078d4' },
         { skill: 'WPF', level: 9, color: '#0078d4' },
-        { skill: 'TypeScript/React', level: 8, color: '#3178c6' },
+        { skill: 'React/TypeScript', level: 8, color: '#3178c6' },
         { skill: 'SQL Databases', level: 10, color: '#00758f' },
         { skill: 'DevExpress', level: 10, color: '#ff7200' },
         { skill: 'Entity Framework', level: 9, color: '#512bd4' },
@@ -111,7 +111,7 @@
             const labelY = centerY + Math.sin(angle) * (radius + 20);
             
             ctx.fillStyle = '#c8c3bc';
-            ctx.font = '12px Source Sans Pro';
+            ctx.font = 'Source Sans Pro", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText(skillsData[i].skill, labelX, labelY);
         }
