@@ -27,7 +27,9 @@ jobs:
       with:
         context: ./website-ui
         push: true
-        tags: 0xmma/mm-website-ui:latest
+        tags: |
+          0xmma/mm-website-ui:${{ github.sha }}
+          0xmma/mm-website-ui:latest
         platforms: linux/amd64,linux/arm64
         
     - name: Trigger Watchtower Update
