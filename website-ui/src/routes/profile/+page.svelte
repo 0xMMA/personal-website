@@ -252,7 +252,7 @@
                     <h3 class="text-xl font-bold text-white mb-4">Certifications</h3>
                     <div class="space-y-4">
                         {#each certifications as cert}
-                            <div class="flex items-center space-x-4 p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors duration-200">
+                            <div class="flex items-center space-x-4 p-3 bg-gray-700/30 rounded-lg">
                                 <!-- Certification Badge -->
                                 <div class="w-20 h-20 flex items-center justify-center flex-shrink-0">
                                     {#if cert.logo}
@@ -314,7 +314,7 @@
                     <h3 class="text-xl font-bold text-white mb-4">Daily Toolbox</h3>
                     <div class="grid grid-cols-1 gap-3">
                         {#each dailyTools as tool}
-                            <div class="flex items-center space-x-3 p-2 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors duration-200">
+                            <div class="flex items-center space-x-3 p-2 bg-gray-700/30 rounded-lg">
                                 <div class="text-xl flex-shrink-0">
                                     {tool.icon}
                                 </div>
