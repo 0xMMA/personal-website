@@ -84,7 +84,7 @@
                 <div class="flex items-center space-x-2">
                     <div class="w-2 h-2 bg-pink-400 rounded-full"></div>
                     <span>High-Res Image Optimization</span>
-                </div>
+                </div>       
                 <div class="flex items-center space-x-2">
                     <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
                     <span>Interactive Lightbox</span>

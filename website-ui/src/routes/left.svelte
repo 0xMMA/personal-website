@@ -80,7 +80,7 @@
                 </div> -->
                 <div class="flex items-center space-x-2">
                     <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span>Project Timeline</span>
+                    <span>Timeline</span>
                 </div>
             </div>
             

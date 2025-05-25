@@ -298,7 +298,7 @@
                             <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                             </svg>
-                            <span>Fernwald, Germany</span>
+                            <span>Frankfurt/Rhein-Main, Germany</span>
                         </div>
                         <div class="flex items-center space-x-3">
                             <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
@@ -341,7 +341,7 @@
                         with 96 points in IT Specialist Application Development.
                     </p>
                     <p class="text-gray-300 leading-relaxed">
-                        Currently working as Expert Consultant at valantic ace GmbH on enterprise data governance solutions and banking data pipeline projects. 
+                        Currently working as Expert Consultant at valantic ACE GmbH on enterprise data governance solutions and banking data pipeline projects. 
                         Strong background in team leadership, having led teams of 9+ people while driving strategic architecture decisions and modern development practices.
                         Passionate about clean code, mentoring, and continuous learning.
                     </p>
