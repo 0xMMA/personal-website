@@ -36,7 +36,7 @@
              class:opacity-100={!expanded}
              class:opacity-0={expanded}>
             <div class="writing-vertical text-sm font-medium text-blue-300 tracking-widest">
-                PROFESSIONAL
+                PROFESSION
             </div>
         </div>
         
@@ -70,22 +70,22 @@
             
             <!-- Feature highlights -->
             <div class="space-y-2 text-xs">
-                <div class="flex items-center space-x-2">
+                <!-- <div class="flex items-center space-x-2">
                     <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
                     <span>Interactive Skills Radar</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                </div> -->
+                <!-- <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
                     <span>PDF Resume Export</span>
-                </div>
+                </div> -->
                 <div class="flex items-center space-x-2">
-                    <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
                     <span>Project Timeline</span>
                 </div>
             </div>
             
             <div class="mt-6 text-center">
-                <span class="text-blue-300 text-sm font-medium">Click to explore �</span>
+                <span class="text-blue-300 text-sm font-medium">Click to explore</span>
             </div>
         </div>
     </div>

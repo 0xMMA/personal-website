@@ -217,7 +217,7 @@
             <h1 class="text-5xl font-bold text-white mb-4">Michael Martin</h1>
             <p class="text-xl text-blue-300 mb-2">Expert Consultant & .NET Developer</p>
             <p class="text-lg text-gray-300 mb-6">13+ years experience • Best in the state 2014 • Team Leader</p>
-            <button 
+            <!-- <button 
                 on:click={downloadPDF}
                 class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200 flex items-center mx-auto space-x-2"
             >
@@ -225,7 +225,7 @@
                     <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
                 <span>Download Resume PDF</span>
-            </button>
+            </button> -->
         </div>
         
         <div class="grid lg:grid-cols-3 gap-8">
