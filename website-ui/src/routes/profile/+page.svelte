@@ -34,24 +34,63 @@
             description: 'Cloud solutions architecture',
             logo: '/aws-certified-cloud-practitioneer.png',
             color: 'bg-orange-600/20 text-orange-300'
+        },
+        {
+            name: 'Certified Trainer (Ausbilderschein)',
+            provider: 'IHK Germany',
+            description: 'Professional training & mentoring',
+            logo: null, // Will use icon placeholder for now
+            color: 'bg-blue-600/20 text-blue-300'
         }
-        
+    ];
+
+    let dailyTools = [
+        {
+            name: 'Visual Studio',
+            category: 'IDE',
+            icon: '🛠️'
+        },
+        {
+            name: 'ReSharper',
+            category: 'Code Analysis',
+            icon: '🔍'
+        },
+        {
+            name: 'Claude Code',
+            category: 'AI Assistant',
+            icon: '🤖'
+        },
+        {
+            name: 'Docker',
+            category: 'Containerization',
+            icon: '🐳'
+        },
+        {
+            name: 'GitKraken',
+            category: 'Version Control',
+            icon: '🐙'
+        },
+        {
+            name: 'Obsidian',
+            category: 'Knowledge Management',
+            icon: '🧠'
+        }
     ];
 
     let experience = [
         {
             title: 'Expert Consultant',
             company: 'valantic ace GmbH',
-            period: 'January 2024 - Present',
+            period: '2024 - Present',
             description: 'Leading enterprise data governance solutions and banking data pipeline projects with modern tech stack',
-            technologies: ['React', 'TypeScript', '.NET 8', 'Entity Framework', 'ASP.NET Core', 'DevExpress', 'PostgreSQL']
+            technologies: ['React', 'TypeScript', '.NET 8', 'Entity Framework', 'ASP.NET Core', 'DevExpress', 'PostgreSQL', 'Azure DevOps']
         },
         {
             title: 'Lead Developer & Team Leader',
             company: 'medDV GmbH',
             period: '2022 - 2024',
             description: 'Led team of 6 developers + 3 trainees. Strategic architecture decisions, Scrum/Kanban processes, and modern development practices',
-            technologies: ['C#', 'WinForms', 'WPF', 'ASP.NET Core', 'gRPC', 'DevExpress']
+            technologies: ['C#', 'WinForms', 'WPF', 'ASP.NET Core', 'gRPC', 'DevExpress','GitLab']
         },
         {
             title: 'Full Stack Developer',
@@ -79,7 +118,7 @@
         const ctx = canvas.getContext('2d');
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
-        const radius = Math.min(centerX, centerY) - 40;
+        const radius = Math.min(centerX, centerY) - 80; // More padding for labels
         
         // Clear canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -106,13 +145,22 @@
             ctx.lineTo(x, y);
             ctx.stroke();
             
-            // Add labels
+            // Add labels with better positioning
             const labelX = centerX + Math.cos(angle) * (radius + 20);
             const labelY = centerY + Math.sin(angle) * (radius + 20);
             
             ctx.fillStyle = '#c8c3bc';
-            ctx.font = 'Source Sans Pro", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif';
-            ctx.textAlign = 'center';
+            ctx.font = '12px "Source Sans Pro", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif';
+            
+            // Smart text alignment based on position
+            if (Math.cos(angle) > 0.1) {
+                ctx.textAlign = 'left';
+            } else if (Math.cos(angle) < -0.1) {
+                ctx.textAlign = 'right';
+            } else {
+                ctx.textAlign = 'center';
+            }
+            
             ctx.fillText(skillsData[i].skill, labelX, labelY);
         }
         
@@ -186,19 +234,56 @@
             <div class="lg:col-span-1 space-y-6">
                 
                 <!-- Skills Radar Chart -->
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
+                <!-- <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
                     <h3 class="text-xl font-bold text-white mb-4">Technical Skills</h3>
                     <div class="flex justify-center">
                         <canvas 
                             bind:this={canvas}
                             width="300" 
                             height="300"
-                            class="max-w-full"
+                            class="max-w-full w-80 h-80"
                         ></canvas>
                     </div>
-                </div>
+                </div> -->
                 
-                <!-- Contact Info -->
+               
+                <!-- Certifications -->
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-4">Certifications</h3>
+                    <div class="space-y-4">
+                        {#each certifications as cert}
+                            <div class="flex items-center space-x-4 p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors duration-200">
+                                <!-- Certification Badge -->
+                                <div class="w-20 h-20 flex items-center justify-center flex-shrink-0">
+                                    {#if cert.logo}
+                                        <img 
+                                            src={cert.logo} 
+                                            alt={cert.name}
+                                            class="w-20 h-20 object-contain"
+                                            loading="lazy"
+                                        />
+                                    {:else}
+                                        <!-- Fallback icon for Ausbilderschein -->
+                                        <div class="w-16 h-16 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                                            <svg class="w-10 h-10 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                            </svg>
+                                        </div>
+                                    {/if}
+                                </div>
+                                
+                                <div class="flex-1">
+                                    <h4 class="text-white font-semibold text-sm">{cert.name}</h4>
+                                    <p class="text-gray-400 text-xs">{cert.provider}</p>
+                                    <p class="text-gray-300 text-xs mt-1">{cert.description}</p>
+                                </div>
+                                
+                            </div>
+                        {/each}
+                    </div>
+                </div>
+
+                                <!-- Contact Info -->
                 <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
                     <h3 class="text-xl font-bold text-white mb-4">Contact</h3>
                     <div class="space-y-3 text-gray-300">
@@ -223,29 +308,20 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certifications -->
+
+                <!-- Daily Toolbox -->
                 <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
-                    <h3 class="text-xl font-bold text-white mb-4">Certifications</h3>
-                    <div class="space-y-4">
-                        {#each certifications as cert}
-                            <div class="flex items-center space-x-4 p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors duration-200">
-                                <!-- Certification Badge -->
-                                <div class="w-20 h-20 flex items-center justify-center flex-shrink-0">
-                                    <img 
-                                        src={cert.logo} 
-                                        alt={cert.name}
-                                        class="w-20 h-20 object-contain"
-                                        loading="lazy"
-                                    />
+                    <h3 class="text-xl font-bold text-white mb-4">Daily Toolbox</h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        {#each dailyTools as tool}
+                            <div class="flex items-center space-x-3 p-2 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors duration-200">
+                                <div class="text-xl flex-shrink-0">
+                                    {tool.icon}
                                 </div>
-                                
-                                <div class="flex-1">
-                                    <h4 class="text-white font-semibold text-sm">{cert.name}</h4>
-                                    <p class="text-gray-400 text-xs">{cert.provider}</p>
-                                    <p class="text-gray-300 text-xs mt-1">{cert.description}</p>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-white font-medium text-sm truncate">{tool.name}</h4>
+                                    <p class="text-gray-400 text-xs">{tool.category}</p>
                                 </div>
-                                
                             </div>
                         {/each}
                     </div>
@@ -260,7 +336,7 @@
                 <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
                     <h3 class="text-2xl font-bold text-white mb-4">About</h3>
                     <p class="text-gray-300 leading-relaxed mb-4">
-                        Expert Consultant and .NET Developer with 10+ years of professional experience spanning desktop applications, 
+                        Expert Consultant and .NET Developer with 13+ years of professional experience spanning desktop applications, 
                         web development, and data engineering. Graduated as the <strong class="text-blue-300">best in the state of Hesse 2014</strong> 
                         with 96 points in IT Specialist Application Development.
                     </p>
@@ -305,7 +381,8 @@
                             <div class="flex flex-wrap gap-1">
                                 <span class="bg-purple-600/20 text-purple-300 px-2 py-1 rounded text-xs">C#</span>
                                 <span class="bg-blue-600/20 text-blue-300 px-2 py-1 rounded text-xs">WPF</span>
-                                <span class="bg-green-600/20 text-green-300 px-2 py-1 rounded text-xs">AI</span>
+                                <span class="bg-orange-600/20 text-orange-300 px-2 py-1 rounded text-xs">AI</span>
+                                <span class="bg-green-600/20 text-green-300 px-2 py-1 rounded text-xs">Github</span>
                             </div>
                         </div>
                         <div class="bg-gray-700/50 rounded-lg p-4">
