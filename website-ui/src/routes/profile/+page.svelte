@@ -209,7 +209,7 @@
     <title>Michael Martin - Profile & Resume</title>
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 py-12">
+<div class="min-h-screen py-12" style="background: linear-gradient(135deg, #111827 0%, #1e3a8a 50%, #111827 100%); background-attachment: fixed;">
     <div class="max-w-6xl mx-auto px-4">
         
         <!-- Header -->
@@ -333,7 +333,7 @@
             <div class="lg:col-span-2 space-y-6">
                 
                 <!-- About -->
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
+                <div class="bg-gray-700/30 backdrop-blur-sm rounded-xl p-6">
                     <h3 class="text-2xl font-bold text-white mb-4">About</h3>
                     <p class="text-gray-300 leading-relaxed mb-4">
                         Expert Consultant and .NET Developer with 13+ years of professional experience spanning desktop applications, 
