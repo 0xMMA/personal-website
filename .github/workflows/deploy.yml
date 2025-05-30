@@ -37,7 +37,7 @@ jobs:
     - name: Trigger Watchtower Update
       run: |
         curl -H "Authorization: Bearer ${{ secrets.WATCHTOWER_TOKEN }}" \
-             -X POST http://${{ secrets.WATCHTOWER_BASEURL }}/v1/update/website-michael-martin-dev
+             -X POST http://${{ secrets.WATCHTOWER_BASEURL }}/v1/update
         
     - name: Cleanup local images
       run: |
