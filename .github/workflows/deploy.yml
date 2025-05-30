@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: [self-hosted, docker]  # Nutzt deinen Runner statt ubuntu-latest
+    runs-on: [self-hosted, zvaris]  # Nutzt deinen Runner statt ubuntu-latest
     
     steps:
     - name: Checkout code
