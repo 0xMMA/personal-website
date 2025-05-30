@@ -4,44 +4,45 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture
 
-This is a personal website (michael-martin.dev) with two main components:
+This is a personal website (michael-martin.dev) built as a SvelteKit frontend:
 
 - **website-ui/**: SvelteKit frontend with Tailwind CSS, built as a static site using `@sveltejs/adapter-static`
-- **website-backend/**: Azure Functions backend (.NET 6) - currently non-functional per README
 
 The UI follows a component-based layout with main sections:
 - Portrait component with personal info
 - Start/intro section  
 - "The Dev Way" grid section
+- Photography and profile pages
 - Components are organized in `src/routes/` with shared layout
 
-## Development Commands
+## Development Setup
 
-### Frontend (website-ui/)
+### VSCode with Dev Container (Recommended)
+1. Open project in VSCode
+2. Accept prompt to "Reopen in Container" (uses .devcontainer)
+3. Navigate to `website-ui/` folder
+4. Run `npm run dev` to start development server
+5. Website will be available at http://localhost:5173
+
+### Development Commands (website-ui/)
 ```bash
 cd website-ui
-npm run dev          # Start development server
+npm run dev          # Start development server (Vite)
 npm run build        # Create production build
 npm run check        # TypeScript and Svelte checks
 npm run lint         # Run ESLint and Prettier checks
 npm run format       # Format code with Prettier
 ```
 
-### Root Level
-```bash
-npm run dev          # Starts both rollup watch and SWA with backend
-```
+## Deployment
 
-## Docker Deployment
+GitHub Actions workflow automatically deploys to Harbor registry:
 
-The project uses Docker for deployment with a specific workflow:
-
-1. Build: `docker build -t mm-website-ui:1 .`
-2. Tag: `docker tag mm-website-ui 0xmma/mm-website-ui:1`
-3. Push to DockerHub: `docker push 0xmma/mm-website-ui:1`
-4. Deploy via Portainer on remote server
-
-The website-ui includes nginx.conf for static file serving in production.
+- **Trigger**: Push to `main` branch
+- **Platform**: linux/amd64 (self-hosted runner)
+- **Registry**: Harbor registry
+- **Tags**: `website-michael-martin-ui:${{ github.sha }}` and `:latest`
+- **Auto-deploy**: Watchtower automatically pulls and deploys latest image
 
 ## Key Configuration
 
@@ -49,3 +50,5 @@ The website-ui includes nginx.conf for static file serving in production.
 - Tailwind CSS for styling with PostCSS plugins (import, nested)
 - TypeScript throughout
 - ESLint + Prettier for code quality
+- Docker-based deployment with automated CI/CD
+- Dev container setup for consistent development environment

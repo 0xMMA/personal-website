@@ -1,38 +1,42 @@
 # Website michael-martin.dev
-- credentials im tresor
 
-# Develop
-- GitHub repo: github.com/0xMMA/Website
- - using codespaces / devcontainer
- - built with svelte & Tailwind
- - deployed with docker
- - made with love
+🌐 **[Visit the website →](https://michael-martin.dev)**
 
-## VSCode Development Setup
+Personal website built with SvelteKit and Tailwind CSS, deployed via Docker.
+
+## Development Setup
+
+### VSCode with Dev Container (Recommended)
 1. Open project in VSCode
 2. Accept prompt to "Reopen in Container" (uses .devcontainer)
 3. Navigate to `website-ui/` folder
 4. Run `npm run dev` to start development server
 5. Website will be available at http://localhost:5173
 
-## 'website-ui' 
-- npm run dev                                   //startet dev server
-- npm run build                                 //erstellt einen prod build
+### Development Commands
+```bash
+cd website-ui
+npm run dev          # Start development server
+npm run build        # Create production build
+npm run check        # TypeScript and Svelte checks
+npm run lint         # Run ESLint and Prettier checks
+npm run format       # Format code with Prettier
+```
 
-### build & deployment
+## Deployment
+
 Deployment is automated via GitHub Actions:
 
-1. **Automatic Deployment**: Push to `main` branch triggers automated build and deployment
-2. **Multi-platform Build**: Creates Docker images for both amd64 and arm64 architectures
-3. **Versioning**: Tags images with both git SHA (`${{ github.sha }}`) and `latest`
-4. **Auto-deploy**: Watchtower automatically pulls and deploys the latest image
+- **Trigger**: Push to `main` branch
+- **Platform**: linux/amd64 (self-hosted runner)
+- **Registry**: Harbor registry
+- **Tags**: `website-michael-martin-ui:${{ github.sha }}` and `:latest`
+- **Auto-deploy**: Watchtower automatically pulls and deploys latest image
 
-**Manual Deployment** (if needed):
-1. docker build -t mm-website-ui:1.                // tag/latest ersetzt durch aufsteigende Nummer (aktuell 1)
-1. docker tag mm-website-ui 0xmma/mm-website-ui:1  // tag version ersetzen
-1. docker login -u 0xmma                           // fragt nach passwort -> accesstoken von dockerhub -> im tresor
-1. docker push 0xmma/mm-website-ui:1               // tag version ersetzen
+## Tech Stack
 
-## 'website-backend'
-- azure functions
-- noch nicht funktional
+- **Frontend**: SvelteKit with TypeScript
+- **Styling**: Tailwind CSS with PostCSS
+- **Deployment**: Docker + Harbor registry
+- **CI/CD**: GitHub Actions with self-hosted runner
+- **Development**: Dev container setup
