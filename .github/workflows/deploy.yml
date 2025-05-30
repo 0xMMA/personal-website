@@ -33,6 +33,11 @@ jobs:
         platforms: linux/amd64  # Nur amd64, da self-hosted Runner
         cache-from: type=registry,ref=${{ secrets.HARBOR_REGISTRY }}/mmartin/website-michael-martin-ui:cache
         cache-to: type=registry,ref=${{ secrets.HARBOR_REGISTRY }}/mmartin/website-michael-martin-ui:cache,mode=max
+    
+    - name: Trigger Watchtower Update
+      run: |
+        curl -H "Authorization: Bearer ${{ secrets.WATCHTOWER_TOKEN }}" \
+             -X POST http://${{ secrets.WATCHTOWER_BASEURL }}/v1/update/website-michael-martin-dev
         
     - name: Cleanup local images
       run: |
