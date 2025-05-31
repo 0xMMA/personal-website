@@ -1,6 +1,4 @@
-# Website michael-martin.dev
-
-🌐 **[Visit the website →](https://michael-martin.dev)**
+# Personal Website [michael-martin.dev](https://michael-martin.dev)
 
 Personal website built with SvelteKit and Tailwind CSS, deployed via Docker.
 
