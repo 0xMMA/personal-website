@@ -201,7 +201,7 @@
     
     function downloadPDF() {
         // This would integrate with a PDF generation library like jsPDF
-        alert('PDF download would be implemented here with jsPDF or similar library');
+        // PDF download feature to be implemented
     }
 </script>
 

@@ -1,6 +1,4 @@
 <div class="align-center grid grid-flow-row auto-rows-min items-center justify-center">
-	<!-- <h1 class="text-3xl">Welcome to my PATH</h1> -->
-	<!-- <span class="mb-10 text-4xl text-center ">Hello World!</span> -->
 	<span class="mb-7 text-center text-6xl font-light">I'm <strong>Michael Martin</strong></span>
 	<span class="mb-2 text-center text-3xl font-medium">Welcome to my Digital Realm</span>
 	<a href="https://www.linkedin.com/in/michael-martin-dev/" class="mx-auto" title="linkedin">

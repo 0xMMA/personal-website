@@ -113,7 +113,7 @@
     function loadOneDrivePhotos() {
         // This would integrate with Microsoft Graph API
         // to fetch photos from OneDrive and optimize them
-        console.log('OneDrive integration would be implemented here');
+        // OneDrive integration placeholder
     }
 </script>
 
