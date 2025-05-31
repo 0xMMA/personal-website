@@ -18,9 +18,7 @@ const config = {
 		// This ensures all routes are handled by the SPA
 		prerender: {
 			handleHttpError: 'warn',
-			handleMissingId: 'warn',
-			handleFetchRedirect: 'warn',
-			handleFallback: 'warn'
+			handleMissingId: 'warn',	
 		}
 	}
 };
