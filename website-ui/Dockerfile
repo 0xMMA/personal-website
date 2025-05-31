@@ -1,33 +1,41 @@
-# Use the official Node.js 18 image.
-# If you need a different version, specify that instead.
-FROM node:18 AS builder
+# Multi-stage Dockerfile optimized for build speed and caching
+FROM node:18-alpine AS dependencies
 
-# Create and change to the app directory.
+# Create app directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json (or yarn.lock) to install dependencies
-COPY /package*.json ./
+# Copy dependency files first for better caching
+COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies with cache optimization
+RUN npm ci --silent && npm cache clean --force
 
-# Copy the rest of your app's source code from your host to your image filesystem.
-COPY / ./
+# Build stage
+FROM dependencies AS builder
+WORKDIR /usr/src/app
 
-# Build the app  //output is at /usr/src/app/.svelte-kit/output/ (client|server)
-RUN npm run build  
+# Copy source code (dependencies already cached in previous layer)
+# The existing .dockerignore will exclude unnecessary files
+COPY . .
 
-# Use a lightweight web server to serve the built website
+# Build the application
+RUN npm run build
+
+# Production stage
 FROM nginx:alpine
-
-# Copy the built website from the builder stage to the nginx web server
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 
 # Copy custom Nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port 80 for the web server
+# Copy built static files from builder stage
+COPY --from=builder /usr/src/app/build /usr/share/nginx/html
+
+# Expose port 80
 EXPOSE 80
 
-# Start the web server
+# Health check for better container management
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost/ || exit 1
+
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
