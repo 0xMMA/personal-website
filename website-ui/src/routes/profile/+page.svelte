@@ -79,10 +79,17 @@
 
     let experience = [
         {
+            title: 'Senior Consultant / Senior Developer',
+            company: 'Lurse Pension & Benefits Consulting GmbH',
+            period: 'Nov 2025 - Present',
+            description: 'Cloud-native development with a modern microservice landscape. Building and evolving systems with cutting-edge tooling, fully embracing the cloud-native ecosystem',
+            technologies: ['.NET 10', 'Angular', 'Azure', 'Aspire', 'OpenTelemetry', 'xUnit v3', 'AI']
+        },
+        {
             title: 'Expert Consultant',
             company: 'valantic ace GmbH',
-            period: '2024 - Present',
-            description: 'Leading enterprise data governance solutions and banking data pipeline projects with modern tech stack',
+            period: 'Jan 2024 - Oct 2025',
+            description: 'Enterprise data governance solutions and banking data pipeline projects. Built a solid foundation in modern web architectures with React, DevExpress and .NET Core',
             technologies: ['React', 'TypeScript', '.NET 8', 'Entity Framework', 'ASP.NET Core', 'DevExpress', 'PostgreSQL', 'Azure DevOps']
         },
         {
@@ -90,7 +97,7 @@
             company: 'medDV GmbH',
             period: '2022 - 2024',
             description: 'Led team of 6 developers + 3 trainees. Strategic architecture decisions, Scrum/Kanban processes, and modern development practices',
-            technologies: ['C#', 'WinForms', 'WPF', 'ASP.NET Core', 'gRPC', 'DevExpress','GitLab']
+            technologies: ['C#', 'WinForms', 'WPF', 'ASP.NET Core', 'gRPC', 'DevExpress', 'GitLab']
         },
         {
             title: 'Full Stack Developer',
@@ -215,8 +222,8 @@
         <!-- Header -->
         <div class="text-center mb-12">
             <h1 class="text-5xl font-bold text-white mb-4">Michael Martin</h1>
-            <p class="text-xl text-blue-300 mb-2">Expert Consultant & .NET Developer</p>
-            <p class="text-lg text-gray-300 mb-6">13+ years experience • Best in the state 2014 • Team Leader</p>
+            <p class="text-xl text-blue-300 mb-2">Senior Developer & .NET Expert</p>
+            <p class="text-lg text-gray-300 mb-6">15+ years experience • Best in the state 2014 • Team Leader</p>
             <!-- <button 
                 on:click={downloadPDF}
                 class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200 flex items-center mx-auto space-x-2"
@@ -336,14 +343,17 @@
                 <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
                     <h3 class="text-2xl font-bold text-white mb-4">About</h3>
                     <p class="text-gray-300 leading-relaxed mb-4">
-                        Expert Consultant and .NET Developer with 13+ years of professional experience spanning desktop applications, 
-                        web development, and data engineering. Graduated as the <strong class="text-blue-300">best in the state of Hesse 2014</strong> 
+                        15 years of .NET development — and it never gets boring. From the WinForms days to today, one thing has been constant:
+                        the fascination with how the .NET ecosystem keeps reinventing itself. Graduated as the <strong class="text-blue-300">best in the state of Hesse 2014</strong>
                         with 96 points in IT Specialist Application Development.
                     </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Currently living that passion as Senior Developer at Lurse, where we don't just talk about cloud-native — we actually do it.
+                        With .NET 10, Azure, Aspire, OpenTelemetry, and a microservice landscape that's more than just buzzword bingo.
+                    </p>
                     <p class="text-gray-300 leading-relaxed">
-                        Currently working as Expert Consultant at valantic ACE GmbH on enterprise data governance solutions and banking data pipeline projects. 
-                        Strong background in team leadership, having led teams of 9+ people while driving strategic architecture decisions and modern development practices.
-                        Passionate about clean code, mentoring, and continuous learning.
+                        Strong background in team leadership, having led teams of 9+ people while driving strategic architecture decisions.
+                        Also available as a freelancer — whether it's cloud-native .NET projects, AI experiments, or POCs for new technologies.
                     </p>
                 </div>
                 
@@ -376,8 +386,8 @@
                     <h3 class="text-2xl font-bold text-white mb-6">Key Projects & Achievements</h3>
                     <div class="grid md:grid-cols-2 gap-4">
                         <div class="bg-gray-700/50 rounded-lg p-4">
-                            <h4 class="text-lg font-semibold text-white mb-2">FixMyTex (Open Source)</h4>
-                            <p class="text-gray-300 text-sm mb-3">AI-powered grammar assistant desktop application</p>
+                            <h4 class="text-lg font-semibold text-white mb-2"><a href="https://keylint.io" target="_blank" class="hover:text-blue-300 transition-colors">keylint.io</a> (Open Source)</h4>
+                            <p class="text-gray-300 text-sm mb-3">AI-powered grammar assistant — rebranded &amp; rewritten from FixMyTex (alpha)</p>
                             <div class="flex flex-wrap gap-1">
                                 <span class="bg-purple-600/20 text-purple-300 px-2 py-1 rounded text-xs">C#</span>
                                 <span class="bg-blue-600/20 text-blue-300 px-2 py-1 rounded text-xs">WPF</span>
@@ -387,7 +397,7 @@
                         </div>
                         <div class="bg-gray-700/50 rounded-lg p-4">
                             <h4 class="text-lg font-semibold text-white mb-2">Data Governance Platform</h4>
-                            <p class="text-gray-300 text-sm mb-3">Enterprise data management with React/.NET 8</p>
+                            <p class="text-gray-300 text-sm mb-3">Enterprise data management with React/.NET 8 (valantic)</p>
                             <div class="flex flex-wrap gap-1">
                                 <span class="bg-cyan-600/20 text-cyan-300 px-2 py-1 rounded text-xs">React</span>
                                 <span class="bg-purple-600/20 text-purple-300 px-2 py-1 rounded text-xs">.NET 8</span>
