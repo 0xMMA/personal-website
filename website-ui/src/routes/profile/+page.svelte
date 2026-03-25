@@ -46,29 +46,19 @@
 
     let dailyTools = [
         {
-            name: 'Visual Studio',
-            category: 'IDE',
+            name: 'Rider, VS Code',
+            category: 'IDEs',
             icon: '🛠️'
         },
         {
-            name: 'ReSharper',
-            category: 'Code Analysis',
-            icon: '🔍'
-        },
-        {
-            name: 'Claude Code',
-            category: 'AI Assistant',
+            name: 'Claude Code, Copilot, Devin',
+            category: 'AI Assistants',
             icon: '🤖'
         },
         {
-            name: 'Docker',
+            name: 'Docker, Podman',
             category: 'Containerization',
             icon: '🐳'
-        },
-        {
-            name: 'GitKraken',
-            category: 'Version Control',
-            icon: '🐙'
         },
         {
             name: 'Obsidian',

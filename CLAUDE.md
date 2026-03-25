@@ -64,6 +64,11 @@ GitHub Actions (`.github/workflows/deploy.yml`) on push to `main`:
 
 Nginx serves static files with SPA routing (`try_files $uri $uri/ /index.html`).
 
+## Workflow
+
+- **At the start of a new session**, always offer to start the dev server (`npm run dev -- --host` from `website-ui/`) so the user can review changes live before pushing. Run it in the background.
+- **Before pushing**, confirm with the user that they've reviewed the changes in the browser.
+
 ## Key Configuration
 
 - **Static site**: `adapter-static` with `200.html` fallback, SSR disabled, prerender enabled
