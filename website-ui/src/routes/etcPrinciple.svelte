@@ -2,19 +2,21 @@
     import { onMount } from 'svelte';
     import Shard from '../lib/shard.svelte';
 
+    export let disabled = false;
+
     let expanded = false;
     /** @type {HTMLElement} */
     let section;
 
     function reveal() {
-        expanded = true;
+        if (!disabled) expanded = true;
     }
 
     onMount(() => {
         let first = true;
         const observer = new IntersectionObserver((entries) => {
             if (first) { first = false; return; }
-            if (entries[0].isIntersecting) {
+            if (entries[0].isIntersecting && !disabled) {
                 reveal();
                 observer.disconnect();
             }
