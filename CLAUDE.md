@@ -69,6 +69,10 @@ Nginx serves static files with SPA routing (`try_files $uri $uri/ /index.html`).
 - **At the start of a new session**, always offer to start the dev server (`npm run dev -- --host` from `website-ui/`) so the user can review changes live before pushing. Run it in the background.
 - **Before pushing**, confirm with the user that they've reviewed the changes in the browser.
 
+## Verification
+
+You are not done until you have verified your changes work. Always run `npm run check` from `website-ui/` after making changes to catch compilation and type errors before presenting work as complete.
+
 ## Key Configuration
 
 - **Static site**: `adapter-static` with `200.html` fallback, SSR disabled, prerender enabled

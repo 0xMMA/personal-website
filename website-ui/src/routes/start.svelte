@@ -1,5 +1,5 @@
 <div class="align-center grid grid-flow-row auto-rows-min items-center justify-center">
-	<span class="mb-7 text-center text-6xl font-light">I'm <strong>Michael Martin</strong></span>
+	<span class="mb-7 text-center text-6xl font-light">I'm <strong style="color: rgb(249, 115, 22);">Michael Martin</strong></span>
 	<span class="mb-2 text-center text-3xl font-medium">Welcome to my Digital Realm</span>
 	<div class="mx-auto flex gap-4">
 		<a href="https://www.linkedin.com/in/michael-martin-dev/" title="LinkedIn">
