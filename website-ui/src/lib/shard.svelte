@@ -1,7 +1,7 @@
 <script>
 	export let title;
 	export let content;
-	export let titleColor = 'color: rgb(249, 115, 22)';
+	export let titleColor = 'color: rgb(209, 213, 219)';
 </script>
 
 <div class="rounded-lg bg-gray-700/20 p-5 transition-all duration-300 hover:bg-gray-700/40 hover:scale-[1.03] hover:shadow-lg hover:shadow-orange-500/10">

@@ -20,8 +20,9 @@ Components are co-located in `src/routes/` (no separate components directory):
 - `start.svelte` — Intro with LinkedIn/GitHub links
 - `portrait.svelte` — Portrait image
 - `theDevWay.svelte` — 8-item value grid using `$lib/shard.svelte` cards
-- `left.svelte` — Collapsible profile sidebar (blue theme)
-- `right.svelte` — Collapsible photography sidebar (purple theme, currently disabled on home page)
+- `etcPrinciple.svelte` — ETC principle section (6 cards, also uses `$lib/shard.svelte`)
+- `left.svelte` — Legacy sidebar (unused, kept for reference)
+- `right.svelte` — Legacy sidebar (unused, kept for reference)
 
 Shared library (`src/lib/`):
 - `shard.svelte` — Reusable card component (title + content slot)
@@ -29,7 +30,10 @@ Shared library (`src/lib/`):
 ### Styling
 
 - Tailwind CSS with PostCSS plugins: `postcss-nested`, `tailwindcss`, `autoprefixer`
-- Global CSS variables defined in `src/app.pcss` (dark background `#131516`, light foreground)
+- Global CSS variables defined in `src/app.pcss` (dark background `#131516`, foreground `rgb(200, 195, 188)`)
+- **Color scheme**: dark/neutral with orange accent `rgb(249, 115, 22)` used sparingly (section separators, name highlight). UI is mostly grayscale — avoid introducing blue, purple, or other saturated colors.
+- Card/section headers use soft gray `rgb(209, 213, 219)` — not bright white
+- Tech tags, tool lists, etc. use neutral `bg-gray-700/30 text-gray-300`
 - Inline SVG icons (Font Awesome)
 
 ## Development Setup
