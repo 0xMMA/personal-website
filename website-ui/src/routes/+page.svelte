@@ -14,13 +14,13 @@
 	onMount(() => {
 		if (skip) return;
 		const timeline = [
-			400,   // 1: Hi appears BIG, centered
-			1400,  // 2: Hi shrinks in place
-			2400,  // 3: Hi moves up to final position
-			3400,  // 4: Name + Portrait appear at final position
-			4800,  // 5: Welcome + social icons
-			5400,  // 6: Content sections
-			5800,  // 7: Nav slides in
+			200,   // 1: Hi appears BIG, centered
+			600,   // 2: Hi shrinks in place
+			1000,  // 3: Hi moves up to final position
+			1400,  // 4: Name + Portrait appear at final position
+			1900,  // 5: Welcome + social icons
+			2200,  // 6: Content sections
+			2500,  // 7: Nav slides in
 		];
 		timeline.forEach((ms, i) => {
 			setTimeout(() => {
@@ -41,13 +41,13 @@
 <div class="flex flex-col items-center pt-24">
 
 	<!-- Hi: step 1 = appear BIG, step 2 = shrink in place, step 3 = move up -->
-	<p class="font-light text-gray-400 transition-all duration-1000 ease-out"
+	<p class="font-light text-gray-400 transition-all duration-[400ms] ease-out"
 	   style="font-size: {step >= 2 ? '1.875rem' : '14rem'}; line-height: 1; opacity: {step >= 1 ? 1 : 0}; margin-top: {step >= 3 ? '0' : '38vh'}; margin-bottom: {step >= 3 ? '1.5rem' : '0'};">
 		Hi
 	</p>
 
 	<!-- Name + Portrait: appear at final position at step 4 -->
-	<div class="flex flex-col items-center gap-6 transition-all duration-700 ease-out mb-6"
+	<div class="flex flex-col items-center gap-6 transition-all duration-350 ease-out mb-6"
 	     style="opacity: {step >= 4 ? 1 : 0}; transform: translateY({step >= 4 ? '0' : '20px'});">
 		<h1 class="font-light text-center" style="font-size: 6rem; line-height: 1;">
 			I'm <strong style="color: rgb(249, 115, 22);">Michael Martin</strong>
@@ -56,12 +56,12 @@
 	</div>
 
 	<!-- Welcome + icons -->
-	<p class="text-2xl font-medium text-gray-300 text-center transition-all duration-700 ease-out mb-6"
+	<p class="text-2xl font-medium text-gray-300 text-center transition-all duration-350 ease-out mb-6"
 	   style="opacity: {step >= 5 ? 1 : 0}; transform: translateY({step >= 5 ? '0' : '20px'});">
 		Welcome to my Digital Realm
 	</p>
 
-	<div class="flex gap-4 transition-all duration-700 ease-out mb-20"
+	<div class="flex gap-4 transition-all duration-350 ease-out mb-20"
 	     style="opacity: {step >= 5 ? 1 : 0}; transform: translateY({step >= 5 ? '0' : '20px'});">
 		<a href="https://www.linkedin.com/in/michael-martin-dev/" title="LinkedIn">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-4 w-4 fill-gray-400 hover:fill-white transition-colors">
@@ -76,11 +76,11 @@
 	</div>
 
 	<!-- Content sections -->
-	<div class="w-full max-w-screen-xl transition-all duration-1000 ease-out mb-20"
+	<div class="w-full max-w-screen-xl transition-all duration-500 ease-out mb-20"
 	     style="opacity: {step >= 6 ? 1 : 0}; transform: translateY({step >= 6 ? '0' : '40px'});">
 		<TheWayOfTheDeveloper disabled={step < 6} />
 	</div>
-	<div class="w-full max-w-screen-xl transition-all duration-1000 ease-out pb-20"
+	<div class="w-full max-w-screen-xl transition-all duration-500 ease-out pb-20"
 	     style="opacity: {step >= 6 ? 1 : 0}; transform: translateY({step >= 6 ? '0' : '40px'});">
 		<EtcPrinciple disabled={step < 6} />
 	</div>

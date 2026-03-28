@@ -13,7 +13,7 @@
 	});
 </script>
 
-<nav class="fixed top-0 left-0 z-50 flex gap-4 px-4 py-2 text-sm text-gray-500 transition-all duration-700 ease-out"
+<nav class="fixed top-0 left-0 z-50 flex gap-4 px-4 py-2 text-sm text-gray-500 transition-all duration-350 ease-out"
      style="opacity: {$navVisible ? 1 : 0}; transform: translateX({$navVisible ? '0' : '-100%'});"
 >
 	<a href="/" class="hover:text-white transition-colors pb-px" style={$page.url.pathname === '/' ? 'border-bottom: 1px solid rgb(249, 115, 22);' : ''}>Home</a>
